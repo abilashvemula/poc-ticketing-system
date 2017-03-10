@@ -1,3 +1,4 @@
+"use strict"
 let Ticket = require('../models/db').Ticket;
 let Customer_Detail = require('../models/db').Customer_Detail;
 let User = require('../models/db').Users;

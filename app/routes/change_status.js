@@ -1,3 +1,4 @@
+"use strict"
 let Ticket = require('../models/db').Ticket;
 let update_db = require("../models/update_db");
 

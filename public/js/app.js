@@ -130,7 +130,11 @@
                 customer_name: $scope.ticket.name
             }
             $http.get('/ticket', {params: params}).then(res => {
+                if (res.data[0]) {
                 $scope.ticket.responseData = res.data;
+                } else {
+                    $scope.ticket.errorMessage = true;
+                }
             })
          }
 

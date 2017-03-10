@@ -8,7 +8,12 @@
         </form>
     </div>
 </div>
-
+<br><br>
+<div class="row" ng-if="!ticket.responseData[0] && ticket.errorMessage">
+	<div class="col-md-12 text-center text-danger">
+		Ticket Not Found...!  Please Enter Valid Customer Name..
+	</div>
+</div>
 <div class="row">
 	<div class="col-md-12">
 	 <table ng-show="ticket.responseData[0]" class="table table-responsive table-hover">

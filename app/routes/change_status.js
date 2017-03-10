@@ -10,7 +10,7 @@ function changeStatus(req, cb) {
 
     let query = { customer_name: `${customer_name}` };
     Ticket.find(query, function(err, docs) {
-        if (docs[0].status == "open" && status == "closed") {
+        if (docs[0] && (docs[0].status == "open" && status == "closed")) {
             Ticket.update(query, { $set: { status: "closed" } }).exec();
 
 
@@ -24,10 +24,10 @@ function changeStatus(req, cb) {
             });
             console.log("successfully changed the state from open to closed");
             cb("successfully changed the state from open to closed");
-        } else if (docs[0].status == "new" && status == "closed") {
+        } else if (docs[0] && (docs[0].status == "new" && status == "closed")) {
             console.log("it is in new state..First assign the user...");
             cb("it is in new state..First assign the user...");
-        } else if (docs[0].status == "closed") {
+        } else if (docs[0] && docs[0].status == "closed") {
             console.log("it is in closed state..Unable to process your request");
             cb("it is in closed state..Unable to process your request");
         } else {

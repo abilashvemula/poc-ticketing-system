@@ -1,7 +1,8 @@
-let fs = require("file-system");
+let fs = require("fs");
+let path = require("path");
 
 function updateDb(docs) {
-    fs.writeFile('/home/abilash/mypractice/poc1/public/data.txt', docs, function(err, data) {
+    fs.writeFile(path.resolve('public/data.txt'), docs, function(err) {
         if (err) {
             return console.log(err);
         }

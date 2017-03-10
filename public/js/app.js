@@ -39,7 +39,10 @@
  app.controller('ticketController', function($scope, $http, $route) {
      $http.get("data.txt").then(function(response) {
          $scope.tickets = response.data;
-         let data = response.data;
+         let data = [];
+         if(response.data) {
+          data = response.data;
+         }
          let resp = JSON.stringify(response.data);
 
          $scope.count = {

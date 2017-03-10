@@ -12,9 +12,9 @@ function addComments(req, cb) {
 
     let query = { customer_name: customer_name };
     Ticket.find(query, function(err, docs) {
-        let comment = docs[0].comments;
+        let comment = (docs[0] && docs[0].comments) || [];
         comment.push(comments_new);
-        if (docs[0].status == "open" || docs[0].status == "new") {
+        if (docs[0] && (docs[0].status == "open" || docs[0].status == "new")) {
             Ticket.update(query, { $set: { comments: comment } }).exec();
             Ticket.find({}, function(err, docs) {
                 if (err) {
@@ -27,7 +27,7 @@ function addComments(req, cb) {
             });
             console.log("successfully added the new comment....");
             cb("successfully added the new comment....");
-        } else if (docs[0].status == "closed") {
+        } else if (docs[0] && docs[0].status == "closed") {
             console.log("it is in closed state..Unable to process your request");
             cb("it is in closed state..Unable to process your request");
         } else {

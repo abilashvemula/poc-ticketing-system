@@ -6,6 +6,7 @@
      let customer_name = req.query.customer_name;
      let query = { customer_name: customer_name };
      Ticket.find(query, function(err, docs) {
+     	if (err) return console.log(err);
          cb(docs);
      });
  }

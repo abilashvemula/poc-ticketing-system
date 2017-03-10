@@ -97,7 +97,7 @@
             })
          }
 
-         $scope.assign = {};
+         $scope.assign = {user : 'user0'};
         
           $scope.assignUser = function () {
             $scope.assign.isFormHidden = true;

@@ -3,7 +3,7 @@
     <h3 id = "head">Assign User to the Ticket</h3>
         <form ng-hide="assign.responseData" ng-submit="assignUser()">
             <input type="text" class="form-control" ng-model="assign.name" placeholder="Enter the customer name to assign user">
-            <select class="form-control" ng-model="assign.user" ng-init="assign.user = 'user0'">
+            <select class="form-control" ng-model="assign.user" >
                 <option value="user0">---Please Select User---</option>
                 <option value="user1">user1</option>
                 <option value="user2">user2</option>

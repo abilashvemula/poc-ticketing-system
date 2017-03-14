@@ -9,7 +9,6 @@ function addComments(req, cb) {
     let customer_name = req.query.customer_name;
     let comments_new = req.query.comments;
 
-
     let query = { customer_name: customer_name };
     Ticket.find(query, function(err, docs) {
         let comment = (docs[0] && docs[0].comments) || [];

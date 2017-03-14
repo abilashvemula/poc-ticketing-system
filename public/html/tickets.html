@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
         <h3 id="head">Ticket Details of Single Customer</h3>
-        <form ng-hide="ticket.responseData[0]" ng-submit="ticketDetails()">
+        <form ng-hide="ticket.responseData" ng-submit="ticketDetails()">
             <input type="text" class="form-control" placeholder="Enter the customer name" ng-model="ticket.name">
             <br/>
             <button class="btn btn-sm btn-primary form-control">Submit</button>
@@ -9,14 +9,14 @@
     </div>
 </div>
 <br><br>
-<div class="row" ng-if="!ticket.responseData[0] && ticket.errorMessage">
+<div class="row" ng-if="!ticket.responseData && ticket.errorMessage">
 	<div class="col-md-12 text-center text-danger">
 		Ticket Not Found...!  Please Enter Valid Customer Name..
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-12">
-	 <table ng-show="ticket.responseData[0]" class="table table-responsive table-hover">
+	 <table ng-show="ticket.responseData" class="table table-responsive table-hover">
             
             <tr>
                 <th>Id</th>
@@ -28,13 +28,13 @@
                 <th>Status</th>
             </tr>
             <tr>
-                <td>{{ ticket.responseData[0]._id }}</td>
-                <td>{{ ticket.responseData[0].customer_name }}</td>
-                <td>{{ ticket.responseData[0].complaint }}</td>
-                <td>{{ ticket.responseData[0].comments }}</td>
-                <td>{{ ticket.responseData[0].created_By }}</td>
-                <td>{{ ticket.responseData[0].assigned_To }}</td>
-                <td>{{ ticket.responseData[0].status }}</td>
+                <td>{{ ticket.responseData._id }}</td>
+                <td>{{ ticket.responseData.customer_name }}</td>
+                <td>{{ ticket.responseData.complaint }}</td>
+                <td>{{ ticket.responseData.comments }}</td>
+                <td>{{ ticket.responseData.created_By }}</td>
+                <td>{{ ticket.responseData.assigned_To }}</td>
+                <td>{{ ticket.responseData.status }}</td>
             </tr>
         </table>
 	</div>

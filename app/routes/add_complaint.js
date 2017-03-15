@@ -4,6 +4,8 @@ let Customer_Detail = require('../models/db').Customer_Detail;
 let update_db = require("../models/update_db");
 
 function complaintDetails(req, cb) {
+    
+    
     Ticket.findOne({ customer_name: req.query.customer_name }, function(err, docs) {
         if (err) {
             console.log(err);

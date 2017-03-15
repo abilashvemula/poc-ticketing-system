@@ -2,7 +2,7 @@
 angular.module('myApp')
  .factory('ComplaintServ', function($http) {
  	function get(name, text){
- let params = {
+       let params = {
                 customer_name: name,
                 complaint: text
             }
@@ -16,5 +16,4 @@ angular.module('myApp')
         }
 
         });
-
 

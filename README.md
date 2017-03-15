@@ -1,4 +1,4 @@
-# poc-ticketing-system
+# Ticketing-system
   just for poc
 
 # Prerequisites:
@@ -12,9 +12,9 @@
 
 # Usage
  
- ** step1: ** clone the repository `git clone https://github.com/abilashvemula/poc-ticketing-system.git`.
+ ** step1: ** clone the repository `git clone https://github.com/maheshshankar/Ticketing-System`.
 
- ** step2: ** cd poc-ticketing-system.
+ ** step2: ** cd Ticketing-system.
 
  ** step3: ** Install npm dependencies with `npm install`.
  

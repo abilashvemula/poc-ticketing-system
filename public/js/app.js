@@ -28,7 +28,7 @@
          })
          .when("/changestate", {
              templateUrl: "html/changestate.html",
-             controller: "assignController"
+             controller: "statusController"
 
          })
          .otherwise('/')

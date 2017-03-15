@@ -4,8 +4,8 @@ angular.module('myApp')
   function get(name, user) {
 
             let params = {
-                customer_name: $scope.assign.name,
-                user: $scope.assign.user
+                customer_name: name,
+                user: user
             }
            return $http.get('/assignuser', {params: params})
            .then(res => {
